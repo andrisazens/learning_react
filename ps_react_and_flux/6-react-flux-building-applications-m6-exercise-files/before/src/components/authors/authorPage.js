@@ -1,30 +1,30 @@
 "use strict";
 
-var React = require('react');
-var AuthorApi = require('../../api/authorApi');
-var AuthorList = require('./authorList');
+var React = require("react");
+var AuthorApi = require("../../api/authorApi");
+var AuthorList = require("./authorList");
 
 var AuthorPage = React.createClass({
-	getInitialState: function() {
-		return {
-			authors: []
-		};
-	},
+    getInitialState: function (params) {
+        return {
+            authors: []
+        };
+    },
 
-	componentDidMount: function() {
+    componentDidMount: function (params) {
 		if (this.isMounted()) {
 			this.setState({ authors: AuthorApi.getAllAuthors() });
 		}
-	},
+    },
 
-	render: function() {
-		return (
+    render: function () {
+        return (
 			<div>
 				<h1>Authors</h1>
-				<AuthorList authors={this.state.authors} />
+				<AuthorList authors={this.state.authors}/>
 			</div>
-		);
-	}
+        );
+    }
 });
 
 module.exports = AuthorPage;
