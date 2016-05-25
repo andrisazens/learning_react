@@ -3,6 +3,20 @@
 var React = require('react');
 
 var About = React.createClass({
+	statics: {
+		willTransitionTo: function (transition, params, query, callback) {
+			if (!confirm("Want to open about?")) {
+				transition.abort();
+			} else {
+				callback();
+			}
+		},
+		willTransitionFrom: function (transition, component) {
+			if (!confirm("Want to leave about?")) {
+				transition.abort();			
+			}
+		}
+	},
 	render: function () {
 		return (
 			<div>
@@ -20,7 +34,7 @@ var About = React.createClass({
 					</ul>
 				</p>
 			</div>
-		); 
+		);
 	}
 });
 
