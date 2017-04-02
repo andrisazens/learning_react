@@ -14,10 +14,12 @@ class App extends Component {
         let items = this.state.items;
         return (
             <div>
-                { items.map(item => <h4>{ item.name }</h4>) }
+                { items.map(item => <h4 key={item.name}>{ item.name }</h4>) }
             </div>
         )
     }
 }
+
+//const Person = (props) => 
 
 export default App;
