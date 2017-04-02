@@ -19,7 +19,7 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React! txt: { this.props.txt }, category: {this.props.cat}, state text: {this.state.txt}, state cat: {this.state.cat} </h2>
-          <input type="text" onChange={this.update.bind(this)} />
+          <Widget update={this.update.bind(this)} />
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
@@ -28,6 +28,8 @@ class App extends Component {
     );
   }
 }
+
+const Widget = (props) => <input type="text" onChange={props.update} />
 
 App.propTypes = {
   txt: React.PropTypes.string,
