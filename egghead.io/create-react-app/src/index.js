@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import App from './App';
-import App from "./Lifecycle";
+import App from "./Updates";
 import './index.css';
 
 ReactDOM.render(
