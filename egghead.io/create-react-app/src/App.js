@@ -20,6 +20,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React! txt: { this.props.txt }, category: {this.props.cat}, state text: {this.state.txt}, state cat: {this.state.cat} </h2>
           <Widget update={this.update.bind(this)} />
+          <Button>I <Heart></Heart> React</Button>
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
@@ -30,6 +31,13 @@ class App extends Component {
 }
 
 const Widget = (props) => <input type="text" onChange={props.update} />
+const Button = (props) => <button>{props.children}</button>
+
+class Heart extends Component {
+  render(){
+    return <span>&hearts;</span>
+  }
+}
 
 App.propTypes = {
   txt: React.PropTypes.string,
